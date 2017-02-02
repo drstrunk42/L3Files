@@ -2,6 +2,14 @@
 #define PASSWORD_H
 
 //complete the includes
+#include "Text.h"
+#include "ReadFile.h"
+#include "WriteFile.h"
+#include "ListArray.h"
+
+using CSC2110::ReadFile;
+using CSC2110::WriteFile;
+using CSC2110::ListArray;
 
 class Password
 {
@@ -14,6 +22,14 @@ class Password
       int getNumMatches(String* curr_word, String* word_guess);
 
    public:
+      Password();
+      ~Password();
+      void addWord(String* word);
+      void guess(int try_password, int num_matches);
+      int getNumberOfPasswordsLeft();
+      void displayViableWords();
+      int bestGuess();
+      String* getOriginalWord(int index);
 
 
 };
